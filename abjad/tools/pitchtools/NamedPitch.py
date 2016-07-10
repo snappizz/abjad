@@ -1380,8 +1380,7 @@ class NamedPitch(Pitch):
         from abjad.tools import pitchtools
         return '{}{}'.format(
             self.diatonic_pitch_class_name,
-            pitchtools.Accidental._semitones_to_abbreviation[
-                self._alteration_in_semitones],
+            pitchtools.Accidental(self._alteration_in_semitones).abbreviation
             )
 
     @property

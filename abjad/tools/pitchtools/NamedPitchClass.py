@@ -25,7 +25,7 @@ class NamedPitchClass(PitchClass):
             NamedPitchClass('d')
 
     ..  container:: example
-        
+
         **Example 3.** Initializes from named pitch:
 
         ::
@@ -296,8 +296,10 @@ class NamedPitchClass(PitchClass):
         groups = match.groups()
         diatonic_pitch_class_name = groups[0]
         abbreviation = groups[1]
-        self._alteration_in_semitones = \
-            pitchtools.Accidental._abbreviation_to_semitones[abbreviation]
+        accidental = pitchtools.Accidental(abbreviation)
+        self._alteration_in_semitones = accidental.semitones
+        #self._alteration_in_semitones = \
+        #    pitchtools.Accidental._abbreviation_to_semitones[abbreviation]
         self._diatonic_pitch_class_number = \
             self._diatonic_pitch_class_name_to_diatonic_pitch_class_number[
                 diatonic_pitch_class_name]
