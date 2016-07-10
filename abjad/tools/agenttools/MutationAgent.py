@@ -473,9 +473,7 @@ class MutationAgent(abctools.AbjadObject):
 
         Returns none.
         '''
-        from abjad.tools import scoretools
         from abjad.tools import selectiontools
-        Selection = selectiontools.Selection
         if isinstance(self._client, selectiontools.Selection):
             donors = self._client
         else:
